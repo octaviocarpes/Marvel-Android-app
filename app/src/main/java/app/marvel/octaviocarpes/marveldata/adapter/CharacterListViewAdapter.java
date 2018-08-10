@@ -50,8 +50,8 @@ public class CharacterListViewAdapter extends BaseAdapter {
     }
 
     private void setupViewInfo(Character character, View rowView) {
-        TextView heroTextView = (TextView) rowView.findViewById(R.id.hero_text_viewID);
-        ImageView heroImageView = (ImageView) rowView.findViewById(R.id.hero_image_viewID);
+        TextView heroTextView = (TextView) rowView.findViewById(R.id.character_text_viewID);
+        ImageView heroImageView = (ImageView) rowView.findViewById(R.id.character_image_viewID);
         heroTextView.setText(character.getName());
         Picasso.get().load(character.getThumbnail().getPath()).resize(350, 350).into(heroImageView);
     }

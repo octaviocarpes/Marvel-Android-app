@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final CharacterViewModel mViewModel = ViewModelProviders.of(this).get(CharacterViewModel.class);
-        characterListView = (ListView) findViewById(R.id.heroes_list_viewID);
+        characterListView = (ListView) findViewById(R.id.characters_list_viewID);
         loadCharacters(mViewModel);
     }
 
