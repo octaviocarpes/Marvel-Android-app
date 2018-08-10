@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         final CharacterViewModel mViewModel = ViewModelProviders.of(this).get(CharacterViewModel.class);
-
         characterListView = (ListView) findViewById(R.id.heroes_list_viewID);
         List<Character> heroes = mViewModel.getRepository().getcharactersDB();
         characterListViewAdapter = new CharacterListViewAdapter(heroes, this);

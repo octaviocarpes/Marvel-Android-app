@@ -2,6 +2,7 @@ package app.marvel.octaviocarpes.marveldata.adapter;
 
 
 import android.app.Activity;
+import android.arch.lifecycle.ViewModel;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -44,12 +45,14 @@ public class CharacterListViewAdapter extends BaseAdapter {
     public View getView(int position, View view, ViewGroup viewGroup) {
         View rowView = context.getLayoutInflater().inflate(R.layout.character_list_item, viewGroup, false);
         Character character = characters.get(position);
+        setupViewInfo(character, rowView);
+        return rowView;
+    }
 
+    private void setupViewInfo(Character character, View rowView) {
         TextView heroTextView = (TextView) rowView.findViewById(R.id.hero_text_viewID);
         ImageView heroImageView = (ImageView) rowView.findViewById(R.id.hero_image_viewID);
-
         heroTextView.setText(character.getName());
-        Picasso.get().load(character.getThumbnail().getPath()).resize(550, 350).into(heroImageView);
-        return rowView;
+        Picasso.get().load(character.getThumbnail().getPath()).resize(350, 350).into(heroImageView);
     }
 }
