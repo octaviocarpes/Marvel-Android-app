@@ -1,12 +1,13 @@
 package app.marvel.octaviocarpes.marveldata.model;
 
-public class Comic {
+public class Serie {
 
     private String name;
     private String resourceURI;
 
-    public Comic(String name) {
+    public Serie(String name, String resourceURI) {
         this.name = name;
+        this.resourceURI = resourceURI;
     }
 
     public String getName() {

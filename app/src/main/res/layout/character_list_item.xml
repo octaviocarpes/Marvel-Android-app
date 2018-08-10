@@ -3,26 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/hero_item_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_red_dark">
 
     <ImageView
         android:id="@+id/hero_image_viewID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_width="305dp"
+        android:layout_height="89dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/hero_text_viewID"
-        android:layout_width="248dp"
-        android:layout_height="72dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/hero_image_viewID"
-        android:layout_marginStart="114dp"
+        android:layout_width="299dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="134dp"
+        android:layout_marginBottom="15dp"
         android:text="TextView"
+        android:gravity="center"
+        android:textColor="@android:color/white"
         android:textSize="@dimen/hero_name_text_size" />
 </RelativeLayout>

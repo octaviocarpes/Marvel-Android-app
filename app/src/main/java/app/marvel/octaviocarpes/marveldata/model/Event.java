@@ -1,19 +1,12 @@
 package app.marvel.octaviocarpes.marveldata.model;
 
-public class Comic {
+public class Event {
 
-    private String name;
     private String resourceURI;
+    private String name;
 
-    public Comic(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public Event(String resourceURI, String name) {
+        this.resourceURI = resourceURI;
         this.name = name;
     }
 
@@ -23,5 +16,13 @@ public class Comic {
 
     public void setResourceURI(String resourceURI) {
         this.resourceURI = resourceURI;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

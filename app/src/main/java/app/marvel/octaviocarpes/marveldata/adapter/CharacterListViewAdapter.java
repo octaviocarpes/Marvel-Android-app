@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import app.marvel.octaviocarpes.marveldata.R;
@@ -47,7 +49,7 @@ public class CharacterListViewAdapter extends BaseAdapter {
         ImageView heroImageView = (ImageView) rowView.findViewById(R.id.hero_image_viewID);
 
         heroTextView.setText(character.getName());
-        heroImageView.setImageResource(R.mipmap.ic_launcher);
+        Picasso.get().load(character.getThumbnail().getPath()).resize(550, 350).into(heroImageView);
         return rowView;
     }
 }
