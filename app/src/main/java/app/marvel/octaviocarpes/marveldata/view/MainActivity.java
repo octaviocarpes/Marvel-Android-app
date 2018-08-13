@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
+
 import com.crashlytics.android.Crashlytics;
 
 import java.util.List;
@@ -26,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
 
-        final CharacterViewModel mViewModel = ViewModelProviders.of(this).get(CharacterViewModel.class);
         characterListView = (ListView) findViewById(R.id.characters_list_viewID);
+
+        final CharacterViewModel mViewModel = ViewModelProviders.of(this).get(CharacterViewModel.class);
         loadCharacters(mViewModel);
     }
 

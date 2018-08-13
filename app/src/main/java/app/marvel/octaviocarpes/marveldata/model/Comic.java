@@ -24,4 +24,12 @@ public class Comic {
     public void setResourceURI(String resourceURI) {
         this.resourceURI = resourceURI;
     }
+
+    @Override
+    public String toString() {
+        return "Comic{" +
+                "name='" + name + '\'' +
+                ", resourceURI='" + resourceURI + '\'' +
+                '}';
+    }
 }

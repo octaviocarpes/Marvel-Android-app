@@ -25,4 +25,12 @@ public class Serie {
     public void setResourceURI(String resourceURI) {
         this.resourceURI = resourceURI;
     }
+
+    @Override
+    public String toString() {
+        return "Serie{" +
+                "name='" + name + '\'' +
+                ", resourceURI='" + resourceURI + '\'' +
+                '}';
+    }
 }

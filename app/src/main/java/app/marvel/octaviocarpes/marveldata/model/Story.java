@@ -35,4 +35,13 @@ public class Story {
     public void setType(String type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Story{" +
+                "resourceURI='" + resourceURI + '\'' +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }
