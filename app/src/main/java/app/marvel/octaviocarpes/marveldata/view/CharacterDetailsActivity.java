@@ -47,8 +47,6 @@ public class CharacterDetailsActivity extends AppCompatActivity {
     private void setupView(Character character) {
         setupViewImage(character);
         setupViewText(character);
-        setupViewList(character.getComics());
-        setupViewButtons(character);
     }
 
     public void setupViewImage(Character character) {
@@ -61,56 +59,4 @@ public class CharacterDetailsActivity extends AppCompatActivity {
         characterTextView.setText(character.getName());
     }
 
-    public void setupViewList(List listInfo) {
-        characterInfo = (ListView) findViewById(R.id.character_data_list_view_ID);
-        CharacterDetailListViewAdapter adapter = new CharacterDetailListViewAdapter(listInfo, this );
-        characterInfo.setAdapter(adapter);
-    }
-
-    public void setupViewButtons(final Character character) {
-        setComicsButton(character);
-        setEventsButton(character);
-        setStoriesButton(character);
-        setSeriesButton(character);
-    }
-
-    public void setComicsButton(final Character character) {
-        comicsButton = (Button) findViewById(R.id.character_comics_button_ID);
-        comicsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setupViewList(character.getComics());
-            }
-        });
-    }
-
-    public void setEventsButton(final Character character) {
-        eventsButton = (Button) findViewById(R.id.character_events_button_ID);
-        eventsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setupViewList(character.getEvents());
-            }
-        });
-    }
-
-    public void setSeriesButton(final Character character) {
-        seriesButton = (Button) findViewById(R.id.character_series_button_ID);
-        seriesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setupViewList(character.getSeries());
-            }
-        });
-    }
-
-    public void setStoriesButton(final Character character) {
-        storiesButton = (Button) findViewById(R.id.character_stories_button_ID);
-        storiesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setupViewList(character.getStories());
-            }
-        });
-    }
 }
