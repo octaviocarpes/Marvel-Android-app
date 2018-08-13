@@ -5,8 +5,9 @@ public class Comic {
     private String name;
     private String resourceURI;
 
-    public Comic(String name) {
+    public Comic(String name, String resourceURI) {
         this.name = name;
+        this.resourceURI = resourceURI;
     }
 
     public String getName() {

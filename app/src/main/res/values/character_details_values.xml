@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--ImageView-->
+    <dimen name="character_detail_imageView_layout_marginStart">16dp</dimen>
+    <dimen name="character_detail_imageView_layout_marginTop">16dp</dimen>
+
+    <!--TextView-->
+    <dimen name="character_detail_textView_layout_width">231dp</dimen>
+    <dimen name="character_detail_textView_layout_heigth">72dp</dimen>
+    <dimen name="character_detail_textView_layout_marginStart">12dp</dimen>
+    <dimen name="character_detail_textView_layout_marginTop">16dp</dimen>
+    <dimen name="character_detail_textView_textSize">20sp</dimen>
+
+    <!--LinearLayout-->
+    <dimen name="character_detail_linearLayout_layout_height">52dp</dimen>
+    <dimen name="character_detail_linearLayout_layout_marginEnd">8dp</dimen>
+    <dimen name="character_detail_linearLayout_layout_marginStart">8dp</dimen>
+    <dimen name="character_detail_linearLayout_layout_marginTop">112dp</dimen>
+
+    <!--ListView-->
+    <dimen name="character_detail_listView_heigth">342dp</dimen>
+    <dimen name="character_detail_listView_margin_bottom">8dp</dimen>
+    <dimen name="character_detail_listView_margin_end">8dp</dimen>
+    <dimen name="character_detail_listView_margin_start">8dp</dimen>
+</resources>

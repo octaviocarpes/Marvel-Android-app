@@ -15,6 +15,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import app.marvel.octaviocarpes.marveldata.R;
+import app.marvel.octaviocarpes.marveldata.adapter.CharacterDetailListViewAdapter;
 import app.marvel.octaviocarpes.marveldata.model.Character;
 import app.marvel.octaviocarpes.marveldata.utils.IntentDataUtils;
 import app.marvel.octaviocarpes.marveldata.viewModel.CharacterDetailsViewModel;
@@ -40,9 +41,8 @@ public class CharacterDetailsActivity extends AppCompatActivity {
         final CharacterDetailsViewModel mViewModel = ViewModelProviders.of(this).get(CharacterDetailsViewModel.class);
         character = mViewModel.getRepository().getcharactersDB().get(position);
         setupView(character);
-//        Picasso.get().load(character.getThumbnail().getPath()).resize(350, 350).into(characterImage);
-//        characterTextView.setText(character.getName());
     }
+
 
     private void setupView(Character character) {
         setupViewImage(character);
@@ -52,16 +52,18 @@ public class CharacterDetailsActivity extends AppCompatActivity {
     }
 
     public void setupViewImage(Character character) {
-        characterImage = (ImageView) findViewById(R.id.character_image_viewID);
+        characterImage = (ImageView) findViewById(R.id.character_imageView_ID);
+        Picasso.get().load(character.getThumbnail().getPath()).resize(300, 300).into(characterImage);
     }
 
     public void setupViewText(Character character) {
-        characterTextView = (TextView) findViewById(R.id.character_text_viewID);
+        characterTextView = (TextView) findViewById(R.id.character_name_textView_ID);
+        characterTextView.setText(character.getName());
     }
 
     public void setupViewList(List listInfo) {
         characterInfo = (ListView) findViewById(R.id.character_data_list_view_ID);
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listInfo);
+        CharacterDetailListViewAdapter adapter = new CharacterDetailListViewAdapter(listInfo, this );
         characterInfo.setAdapter(adapter);
     }
 
