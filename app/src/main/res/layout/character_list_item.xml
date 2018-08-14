@@ -4,7 +4,7 @@
     android:id="@+id/character_item_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_red_dark">
+    android:background="@android:color/background_light">
 
     <ImageView
         android:id="@+id/character_image_viewID"
@@ -12,9 +12,9 @@
         android:layout_height="@dimen/character_image_heigth"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/character_image_margin_bottom"
         android:layout_marginStart="@dimen/character_image_margin_start"
         android:layout_marginTop="@dimen/character_image_margin_top"
-        android:layout_marginBottom="@dimen/character_image_margin_bottom"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
@@ -26,6 +26,6 @@
         android:layout_marginEnd="@dimen/character_name_margin_end"
         android:gravity="center"
         android:text="TextView"
-        android:textColor="@android:color/white"
+        android:textColor="@color/text_color"
         android:textSize="@dimen/character_name_text_size" />
 </RelativeLayout>
