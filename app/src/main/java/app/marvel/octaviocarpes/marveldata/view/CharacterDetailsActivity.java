@@ -1,34 +1,27 @@
 package app.marvel.octaviocarpes.marveldata.view;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
-
-import com.squareup.picasso.Picasso;
-
-import java.util.List;
+import android.widget.GridView;
 
 import app.marvel.octaviocarpes.marveldata.R;
-import app.marvel.octaviocarpes.marveldata.adapter.CharacterDetailListViewAdapter;
+import app.marvel.octaviocarpes.marveldata.adapter.ViewPagerAdapter;
 import app.marvel.octaviocarpes.marveldata.model.Character;
+import app.marvel.octaviocarpes.marveldata.model.Comic;
 import app.marvel.octaviocarpes.marveldata.utils.IntentDataUtils;
+import app.marvel.octaviocarpes.marveldata.view.fragments.ComicsFragment;
 import app.marvel.octaviocarpes.marveldata.viewModel.CharacterDetailsViewModel;
 
 public class CharacterDetailsActivity extends AppCompatActivity {
 
-    private ListView characterInfo;
-    private Button comicsButton;
-    private Button seriesButton;
-    private Button eventsButton;
-    private Button storiesButton;
-    private ImageView characterImage;
-    private TextView characterTextView;
+    GridView gridView;
+    TabLayout tabLayout;
+    AppBarLayout appBarLayout;
+    ViewPager viewPager;
 
     private Character character;
 
@@ -40,23 +33,15 @@ public class CharacterDetailsActivity extends AppCompatActivity {
         Integer position = bundle.getInt(IntentDataUtils.CHARACTER_POSITION);
         final CharacterDetailsViewModel mViewModel = ViewModelProviders.of(this).get(CharacterDetailsViewModel.class);
         character = mViewModel.getRepository().getcharactersDB().get(position);
-        setupView(character);
+
+        tabLayout = (TabLayout) findViewById(R.id.character_detail_tabLayoutID);
+        appBarLayout = (AppBarLayout) findViewById(R.id.character_detail_appBarLayoutID);
+        viewPager = (ViewPager) findViewById(R.id.character_detail_viewPagerID);
+
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new ComicsFragment(), "Comics");
+
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
-
-
-    private void setupView(Character character) {
-        setupViewImage(character);
-        setupViewText(character);
-    }
-
-    public void setupViewImage(Character character) {
-        characterImage = (ImageView) findViewById(R.id.character_imageView_ID);
-        Picasso.get().load(character.getThumbnail().getPath()).resize(300, 300).into(characterImage);
-    }
-
-    public void setupViewText(Character character) {
-        characterTextView = (TextView) findViewById(R.id.character_name_textView_ID);
-        characterTextView.setText(character.getName());
-    }
-
 }
