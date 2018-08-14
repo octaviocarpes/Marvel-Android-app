@@ -1,5 +1,6 @@
 package app.marvel.octaviocarpes.marveldata.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,25 +16,25 @@ import java.util.List;
 import app.marvel.octaviocarpes.marveldata.R;
 import app.marvel.octaviocarpes.marveldata.model.Comic;
 
-public class ComicsDetailGridAdapter extends BaseAdapter {
+public class ComicsGridViewAdaprter extends BaseAdapter {
 
-    private List<Comic> items;
+    private Activity context;
+    private List<Comic> comics;
+    private LayoutInflater inflater;
 
-    private Context context;
-
-    public ComicsDetailGridAdapter(List items, Context context) {
-        this.items = items;
+    public ComicsGridViewAdaprter(Activity context, List<Comic> comics) {
         this.context = context;
+        this.comics = comics;
     }
 
     @Override
     public int getCount() {
-        return this.items.size();
+        return comics.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return this.items.get(i);
+        return comics.get(i);
     }
 
     @Override
@@ -45,15 +46,15 @@ public class ComicsDetailGridAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         View gridView = view;
 
-        if (view == null) {
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            gridView = inflater.inflate(R.layout.comics_content, null);
+        if (view == null){
+            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            gridView = inflater.inflate(R.layout.comic_item, null);
         }
 
         ImageView image = (ImageView) gridView.findViewById(R.id.comic_imageViewID);
-        TextView title = (TextView) gridView.findViewById(R.id.comic_textView_ID);
-
-        title.setText(items.get(i).getName());
+        TextView title = (TextView) gridView.findViewById(R.id.comic_textViewID);
+        Picasso.get().load(comics.get(i).getThumbnail().getPath()).resize(250, 350).into(image);
+        title.setText(comics.get(i).getName());
         return gridView;
     }
 }

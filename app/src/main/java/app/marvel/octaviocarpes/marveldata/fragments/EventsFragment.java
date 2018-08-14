@@ -1,4 +1,4 @@
-package app.marvel.octaviocarpes.marveldata.view.fragments;
+package app.marvel.octaviocarpes.marveldata.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,17 +10,16 @@ import android.view.ViewGroup;
 
 import app.marvel.octaviocarpes.marveldata.R;
 
-public class ComicsFragment extends Fragment {
-
+public class EventsFragment extends Fragment {
     private View view;
 
-    public ComicsFragment() {
+    public EventsFragment() {
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.comics_fragment,container, false);
+        view = inflater.inflate(R.layout.events_fragment, container, false);
         return view;
     }
 }

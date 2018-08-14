@@ -4,10 +4,12 @@ public class Comic {
 
     private String name;
     private String resourceURI;
+    private Image thumbnail;
 
-    public Comic(String name, String resourceURI) {
+    public Comic(String name, String resourceURI, Image thumbnail) {
         this.name = name;
         this.resourceURI = resourceURI;
+        this.thumbnail = thumbnail;
     }
 
     public String getName() {
@@ -24,6 +26,14 @@ public class Comic {
 
     public void setResourceURI(String resourceURI) {
         this.resourceURI = resourceURI;
+    }
+
+    public Image getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(Image thumbnail) {
+        this.thumbnail = thumbnail;
     }
 
     @Override

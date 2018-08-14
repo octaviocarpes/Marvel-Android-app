@@ -5,9 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <GridView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnWidth="100dp"
-        />
+   <GridView
+       android:id="@+id/character_detail_comics_gridViewID"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:columnWidth="100dp"
+       android:numColumns="auto_fit"
+       android:stretchMode="columnWidth"
+       android:verticalSpacing="10dp"
+       ></GridView>
 </RelativeLayout>

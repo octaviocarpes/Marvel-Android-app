@@ -7,8 +7,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import app.marvel.octaviocarpes.marveldata.model.Comic;
-
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     private final List<Fragment> fragments = new ArrayList<>();
@@ -26,6 +24,11 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return fragments.size();
+    }
+
+    @Override
+    public String getPageTitle(int position) {
+        return titles.get(position);
     }
 
     public void addFragment(Fragment fragment, String title) {

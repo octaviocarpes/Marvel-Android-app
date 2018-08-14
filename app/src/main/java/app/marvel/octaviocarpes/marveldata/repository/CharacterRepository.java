@@ -31,9 +31,14 @@ public class CharacterRepository {
         charactersDB.add(new Character("Spider-Man", new Image("https://img.purch.com/o/aHR0cDovL3d3dy5uZXdzYXJhbWEuY29tL2ltYWdlcy9pLzAwMC8yMjEvOTU2L2kwMi9BU01GQ0JEXzEuanBn", ".jpg")));
         charactersDB.add(new Character("Iron Man", new Image("https://lumiere-a.akamaihd.net/v1/images/usa_avengers_chi_ironman_n_cf2a66b6.png?region=0%2C0%2C300%2C300", ".jpg")));
 
-        comics.add(new Comic("Comic 1", "Comic URL"));
-        comics.add(new Comic("Comic 2", "Comic URL"));
-        comics.add(new Comic("Comic 3", "Comic URL"));
+        comics.add(new Comic("Comic 1", "Comic URL", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        comics.add(new Comic("Comic 2", "Comic URL", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        comics.add(new Comic("Comic 3", "Comic URL", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        comics.add(new Comic("Comic 4", "Comic URL", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        comics.add(new Comic("Comic 5", "Comic URL", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        comics.add(new Comic("Comic 6", "Comic URL", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        comics.add(new Comic("Comic 7", "Comic URL", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        comics.add(new Comic("Comic 8", "Comic URL", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
 
 
         events.add(new Event("Event URL", "Event 1"));
