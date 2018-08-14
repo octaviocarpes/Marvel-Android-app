@@ -53,7 +53,7 @@ public class ComicsGridViewAdaprter extends BaseAdapter {
 
         ImageView image = (ImageView) gridView.findViewById(R.id.comic_imageViewID);
         TextView title = (TextView) gridView.findViewById(R.id.comic_textViewID);
-        Picasso.get().load(comics.get(i).getThumbnail().getPath()).resize(250, 350).into(image);
+        Picasso.get().load(comics.get(i).getThumbnail().getPath()).resize(350, 450).into(image);
         title.setText(comics.get(i).getName());
         return gridView;
     }
