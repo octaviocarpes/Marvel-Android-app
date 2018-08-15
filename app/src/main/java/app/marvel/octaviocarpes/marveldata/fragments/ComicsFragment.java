@@ -14,7 +14,7 @@ import java.util.List;
 
 import app.marvel.octaviocarpes.marveldata.R;
 import app.marvel.octaviocarpes.marveldata.adapter.ComicsGridViewAdaprter;
-import app.marvel.octaviocarpes.marveldata.model.comics.Comic;
+import app.marvel.octaviocarpes.marveldata.model.Comic;
 
 public class ComicsFragment extends Fragment {
 

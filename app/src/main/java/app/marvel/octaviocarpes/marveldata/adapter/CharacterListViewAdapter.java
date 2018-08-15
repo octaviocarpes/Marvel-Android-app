@@ -14,7 +14,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import app.marvel.octaviocarpes.marveldata.R;
-import app.marvel.octaviocarpes.marveldata.model.characters.Character;
+import app.marvel.octaviocarpes.marveldata.model.Character;
 import app.marvel.octaviocarpes.marveldata.utils.IntentDataUtils;
 import app.marvel.octaviocarpes.marveldata.view.CharacterDetailsActivity;
 

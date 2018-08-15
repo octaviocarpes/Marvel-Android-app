@@ -1,15 +1,13 @@
-package app.marvel.octaviocarpes.marveldata.model.stories;
+package app.marvel.octaviocarpes.marveldata.model;
 
-public class Story {
+public class Event {
 
     private String resourceURI;
     private String name;
-    private String type;
 
-    public Story(String resourceURI, String name, String type) {
+    public Event(String resourceURI, String name) {
         this.resourceURI = resourceURI;
         this.name = name;
-        this.type = type;
     }
 
     public String getResourceURI() {
@@ -28,20 +26,11 @@ public class Story {
         this.name = name;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     @Override
     public String toString() {
-        return "Story{" +
+        return "Event{" +
                 "resourceURI='" + resourceURI + '\'' +
                 ", name='" + name + '\'' +
-                ", type='" + type + '\'' +
                 '}';
     }
 }

@@ -1,13 +1,19 @@
-package app.marvel.octaviocarpes.marveldata.model.series;
+package app.marvel.octaviocarpes.marveldata.model;
 
-public class Serie {
 
+import app.marvel.octaviocarpes.marveldata.model.Image;
+
+public class Comic {
+
+    private Integer id;
     private String name;
     private String resourceURI;
+    private Image thumbnail;
 
-    public Serie(String name, String resourceURI) {
+    public Comic(String name, String resourceURI, Image thumbnail) {
         this.name = name;
         this.resourceURI = resourceURI;
+        this.thumbnail = thumbnail;
     }
 
     public String getName() {
@@ -26,9 +32,17 @@ public class Serie {
         this.resourceURI = resourceURI;
     }
 
+    public Image getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(Image thumbnail) {
+        this.thumbnail = thumbnail;
+    }
+
     @Override
     public String toString() {
-        return "Serie{" +
+        return "Comic{" +
                 "name='" + name + '\'' +
                 ", resourceURI='" + resourceURI + '\'' +
                 '}';

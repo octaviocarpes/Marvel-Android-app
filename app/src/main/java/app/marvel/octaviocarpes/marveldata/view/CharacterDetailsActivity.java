@@ -17,7 +17,7 @@ import app.marvel.octaviocarpes.marveldata.fragments.ComicsFragment;
 import app.marvel.octaviocarpes.marveldata.fragments.EventsFragment;
 import app.marvel.octaviocarpes.marveldata.fragments.SeriesFragment;
 import app.marvel.octaviocarpes.marveldata.fragments.StoriesFragment;
-import app.marvel.octaviocarpes.marveldata.model.characters.Character;
+import app.marvel.octaviocarpes.marveldata.model.Character;
 import app.marvel.octaviocarpes.marveldata.utils.IntentDataUtils;
 import app.marvel.octaviocarpes.marveldata.viewModel.CharacterDetailsViewModel;
 

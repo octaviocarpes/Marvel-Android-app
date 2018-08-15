@@ -12,7 +12,7 @@ import java.util.List;
 
 import app.marvel.octaviocarpes.marveldata.R;
 import app.marvel.octaviocarpes.marveldata.adapter.CharacterListViewAdapter;
-import app.marvel.octaviocarpes.marveldata.model.characters.Character;
+import app.marvel.octaviocarpes.marveldata.model.Character;
 import app.marvel.octaviocarpes.marveldata.viewModel.CharacterViewModel;
 import io.fabric.sdk.android.Fabric;
 
