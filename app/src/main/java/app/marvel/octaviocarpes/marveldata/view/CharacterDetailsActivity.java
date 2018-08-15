@@ -25,39 +25,59 @@ public class CharacterDetailsActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private AppBarLayout appBarLayout;
+
     private ViewPager viewPager;
+    private ViewPagerAdapter adapter;
 
     private Character character;
+
+    CharacterDetailsViewModel mViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_details);
         Bundle bundle = getIntent().getExtras();
-        Integer position = bundle.getInt(IntentDataUtils.CHARACTER_POSITION);
 
+        Integer position = bundle.getInt(IntentDataUtils.CHARACTER_POSITION);
+        mViewModel = ViewModelProviders.of(this).get(CharacterDetailsViewModel.class);
+
+        instantiateComponents();
+        character = loadCharacter(position);
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        addFragmentsToTabLayout();
+        setViewPager();
+        setView(character);
+    }
+
+    private void instantiateComponents() {
         tabLayout = (TabLayout) findViewById(R.id.character_detail_tabLayoutID);
         appBarLayout = (AppBarLayout) findViewById(R.id.character_detail_appBarLayoutID);
         viewPager = (ViewPager) findViewById(R.id.character_detail_viewPagerID);
+    }
 
-        final CharacterDetailsViewModel mViewModel = ViewModelProviders.of(this).get(CharacterDetailsViewModel.class);
-        character = mViewModel.getRepository().getcharactersDB().get(position);
+    private Character loadCharacter(Integer position) {
+        return mViewModel.getRepository().getcharactersDB().get(position);
+    }
 
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+    private void addFragmentsToTabLayout() {
+        adapter.addFragment(buildComicsFragment(), "Comics");
+        adapter.addFragment(new EventsFragment(), "Events");
+        adapter.addFragment(new SeriesFragment(), "Series");
+        adapter.addFragment(new StoriesFragment(), "Stories");
+    }
 
+    private ComicsFragment buildComicsFragment() {
         ComicsFragment comicsFragment = new ComicsFragment();
         comicsFragment.setComics(character.getComics());
         comicsFragment.setContext(CharacterDetailsActivity.this);
+        return comicsFragment;
+    }
 
-        adapter.addFragment(comicsFragment, "Comics");
-        adapter.addFragment(new SeriesFragment(), "Series");
-        adapter.addFragment(new EventsFragment(), "Events");
-        adapter.addFragment(new StoriesFragment(), "Stories");
-
+    private void setViewPager() {
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
-
-        setView(character);
     }
 
     private void setView(Character character) {

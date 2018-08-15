@@ -43,18 +43,25 @@ public class ComicsGridViewAdaprter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(int position, View view, ViewGroup viewGroup) {
         View gridView = view;
 
         if (view == null){
             inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             gridView = inflater.inflate(R.layout.comic_item, null);
         }
-
-        ImageView image = (ImageView) gridView.findViewById(R.id.comic_imageViewID);
-        TextView title = (TextView) gridView.findViewById(R.id.comic_textViewID);
-        Picasso.get().load(comics.get(i).getThumbnail().getPath()).resize(350, 450).into(image);
-        title.setText(comics.get(i).getName());
+        setImage(gridView, position);
+        setTitle(gridView, position);
         return gridView;
+    }
+
+    private void setImage(View gridView, Integer position) {
+        ImageView image = (ImageView) gridView.findViewById(R.id.comic_imageViewID);
+        Picasso.get().load(comics.get(position).getThumbnail().getPath()).resize(350, 450).into(image);
+    }
+
+    private void setTitle(View gridView, Integer position) {
+        TextView title = (TextView) gridView.findViewById(R.id.comic_textViewID);
+        title.setText(comics.get(position).getName());
     }
 }

@@ -56,11 +56,15 @@ public class CharacterListViewAdapter extends BaseAdapter {
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, CharacterDetailsActivity.class);
-                intent.putExtra(IntentDataUtils.CHARACTER_POSITION, position);
-                context.startActivity(intent);
+                navigateToCharacterDetails(position);
             }
         });
+    }
+
+    private void navigateToCharacterDetails(Integer position) {
+        Intent intent = new Intent(context, CharacterDetailsActivity.class);
+        intent.putExtra(IntentDataUtils.CHARACTER_POSITION, position);
+        context.startActivity(intent);
     }
 
     private void setupViewInfo(Character character, View rowView) {

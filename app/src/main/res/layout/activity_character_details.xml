@@ -10,7 +10,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/character_detail_appBarLayoutID"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/character_detail_appBarLayout_height"
         android:layout_gravity="center"
         android:background="@android:color/background_light"
         >
@@ -20,20 +20,20 @@
             android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/characater_imageViewID"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="25dp"
+                android:layout_width="@dimen/character_imageView_width"
+                android:layout_height="@dimen/character_imageView_height"
+                android:layout_marginLeft="@dimen/character_imageView_marginLeft"
+                android:layout_marginTop="@dimen/character_imageView_marginTop"
                 android:src="@mipmap/ic_launcher" />
 
             <TextView
                 android:id="@+id/characater_textViewID"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginLeft="15dp"
-                android:textSize="20sp"
-                android:text="Character Name" />
+                android:layout_height="@dimen/character_textView_height"
+                android:layout_marginTop="@dimen/character_textView_marginTop"
+                android:layout_marginLeft="@dimen/character_textView_marginTop"
+                android:textSize="@dimen/character_textView_textSize"
+                android:text="@string/character_detail_textView" />
         </LinearLayout>
     </android.support.design.widget.AppBarLayout>
 
