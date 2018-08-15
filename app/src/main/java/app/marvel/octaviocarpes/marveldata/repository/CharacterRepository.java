@@ -1,16 +1,14 @@
 package app.marvel.octaviocarpes.marveldata.repository;
 
-import android.widget.ListView;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import app.marvel.octaviocarpes.marveldata.model.Character;
-import app.marvel.octaviocarpes.marveldata.model.Comic;
-import app.marvel.octaviocarpes.marveldata.model.Event;
+import app.marvel.octaviocarpes.marveldata.model.characters.Character;
+import app.marvel.octaviocarpes.marveldata.model.comics.Comic;
+import app.marvel.octaviocarpes.marveldata.model.events.Event;
 import app.marvel.octaviocarpes.marveldata.model.Image;
-import app.marvel.octaviocarpes.marveldata.model.Serie;
-import app.marvel.octaviocarpes.marveldata.model.Story;
+import app.marvel.octaviocarpes.marveldata.model.series.Serie;
+import app.marvel.octaviocarpes.marveldata.model.stories.Story;
 
 public class CharacterRepository {
 

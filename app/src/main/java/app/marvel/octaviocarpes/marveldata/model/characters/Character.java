@@ -1,8 +1,14 @@
-package app.marvel.octaviocarpes.marveldata.model;
+package app.marvel.octaviocarpes.marveldata.model.characters;
 
 
 import java.util.Date;
 import java.util.List;
+
+import app.marvel.octaviocarpes.marveldata.model.events.Event;
+import app.marvel.octaviocarpes.marveldata.model.Image;
+import app.marvel.octaviocarpes.marveldata.model.series.Serie;
+import app.marvel.octaviocarpes.marveldata.model.stories.Story;
+import app.marvel.octaviocarpes.marveldata.model.comics.Comic;
 
 public class Character {
 

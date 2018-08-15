@@ -14,7 +14,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import app.marvel.octaviocarpes.marveldata.R;
-import app.marvel.octaviocarpes.marveldata.model.Comic;
+import app.marvel.octaviocarpes.marveldata.model.comics.Comic;
 
 public class ComicsGridViewAdaprter extends BaseAdapter {
 

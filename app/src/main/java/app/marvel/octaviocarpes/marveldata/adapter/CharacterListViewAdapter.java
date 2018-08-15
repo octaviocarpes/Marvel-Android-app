@@ -2,24 +2,21 @@ package app.marvel.octaviocarpes.marveldata.adapter;
 
 
 import android.app.Activity;
-import android.arch.lifecycle.ViewModel;
 import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import app.marvel.octaviocarpes.marveldata.R;
-import app.marvel.octaviocarpes.marveldata.model.Character;
+import app.marvel.octaviocarpes.marveldata.model.characters.Character;
 import app.marvel.octaviocarpes.marveldata.utils.IntentDataUtils;
 import app.marvel.octaviocarpes.marveldata.view.CharacterDetailsActivity;
-import app.marvel.octaviocarpes.marveldata.view.MainActivity;
 
 public class CharacterListViewAdapter extends BaseAdapter {
 
