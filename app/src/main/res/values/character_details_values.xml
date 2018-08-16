@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="character_detail_appBarLayout_height">150dp</dimen>
+
+    <dimen name="character_imageView_width">100dp</dimen>
+    <dimen name="character_imageView_height">100dp</dimen>
+    <dimen name="character_imageView_marginLeft">25dp</dimen>
+    <dimen name="character_imageView_marginTop">25dp</dimen>
+
+    <dimen name="character_textView_height">50dp</dimen>
+    <dimen name="character_textView_marginTop">25dp</dimen>
+    <dimen name="character_textView_marginLeft">15dp</dimen>
+    <dimen name="character_textView_textSize">20sp</dimen>
+</resources>

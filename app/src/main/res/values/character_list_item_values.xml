@@ -5,6 +5,7 @@
     <dimen name="character_name_width">217dp</dimen>
     <dimen name="character_name_heigth">90dp</dimen>
     <dimen name="character_name_margin_end">29dp</dimen>
+    <dimen name="character_name_margin_top">29dp</dimen>
 
     <!--List item ImageView-->
     <dimen name="character_image_width">90dp</dimen>

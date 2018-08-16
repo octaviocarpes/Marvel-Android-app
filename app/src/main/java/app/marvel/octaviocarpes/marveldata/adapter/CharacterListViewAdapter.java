@@ -2,7 +2,7 @@ package app.marvel.octaviocarpes.marveldata.adapter;
 
 
 import android.app.Activity;
-import android.arch.lifecycle.ViewModel;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -15,6 +15,8 @@ import java.util.List;
 
 import app.marvel.octaviocarpes.marveldata.R;
 import app.marvel.octaviocarpes.marveldata.model.Character;
+import app.marvel.octaviocarpes.marveldata.utils.IntentDataUtils;
+import app.marvel.octaviocarpes.marveldata.view.CharacterDetailsActivity;
 
 public class CharacterListViewAdapter extends BaseAdapter {
 
@@ -46,7 +48,23 @@ public class CharacterListViewAdapter extends BaseAdapter {
         View rowView = context.getLayoutInflater().inflate(R.layout.character_list_item, viewGroup, false);
         Character character = characters.get(position);
         setupViewInfo(character, rowView);
+        setupOnClick(rowView, position);
         return rowView;
+    }
+
+    private void setupOnClick(View rowView, final int position) {
+        rowView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToCharacterDetails(position);
+            }
+        });
+    }
+
+    private void navigateToCharacterDetails(Integer position) {
+        Intent intent = new Intent(context, CharacterDetailsActivity.class);
+        intent.putExtra(IntentDataUtils.CHARACTER_POSITION, position);
+        context.startActivity(intent);
     }
 
     private void setupViewInfo(Character character, View rowView) {

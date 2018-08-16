@@ -1,6 +1,5 @@
 package app.marvel.octaviocarpes.marveldata.model;
 
-
 import java.util.Date;
 import java.util.List;
 
@@ -17,6 +16,7 @@ public class Character {
     private List<Story> stories;
     private List<Event> events;
     private List<Serie> series;
+
 
 
     public Character(String name, Image thumbnail) {
