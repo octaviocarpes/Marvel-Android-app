@@ -63,9 +63,9 @@ public class CharacterDetailsActivity extends AppCompatActivity {
 
     private void addFragmentsToTabLayout() {
         adapter.addFragment(buildComicsFragment(), "Comics");
-        adapter.addFragment(new EventsFragment(), "Events");
-        adapter.addFragment(new SeriesFragment(), "Series");
-        adapter.addFragment(new StoriesFragment(), "Stories");
+        adapter.addFragment(buildEventsFragment(), "Events");
+        adapter.addFragment(buildSeriesFragment(), "Series");
+        adapter.addFragment(buildStoriesFragment(), "Stories");
     }
 
     private ComicsFragment buildComicsFragment() {
@@ -73,6 +73,27 @@ public class CharacterDetailsActivity extends AppCompatActivity {
         comicsFragment.setComics(character.getComics());
         comicsFragment.setContext(CharacterDetailsActivity.this);
         return comicsFragment;
+    }
+
+    private EventsFragment buildEventsFragment() {
+        EventsFragment eventsFragment = new EventsFragment();
+        eventsFragment.setEvents(character.getEvents());
+        eventsFragment.setContext(CharacterDetailsActivity.this);
+        return eventsFragment;
+    }
+
+    private SeriesFragment buildSeriesFragment() {
+        SeriesFragment seriesFragment = new SeriesFragment();
+        seriesFragment.setSeries(character.getSeries());
+        seriesFragment.setContext(CharacterDetailsActivity.this);
+        return seriesFragment;
+    }
+
+    private StoriesFragment buildStoriesFragment() {
+        StoriesFragment storiesFragment = new StoriesFragment();
+        storiesFragment.setStories(character.getStories());
+        storiesFragment.setContext(CharacterDetailsActivity.this);
+        return storiesFragment;
     }
 
     private void setViewPager() {

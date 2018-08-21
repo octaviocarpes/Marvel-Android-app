@@ -39,17 +39,28 @@ public class CharacterRepository {
         comics.add(new Comic("Comic 8", "Comic URL", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
 
 
-        events.add(new Event("Event URL", "Event 1"));
-        events.add(new Event("Event URL", "Event 2"));
-        events.add(new Event("Event URL", "Event 3"));
+        events.add(new Event("Event URL", "Event 1", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        events.add(new Event("Event URL", "Event 2", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        events.add(new Event("Event URL", "Event 3", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        events.add(new Event("Event URL", "Event 4", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        events.add(new Event("Event URL", "Event 5", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        events.add(new Event("Event URL", "Event 6", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
 
-        series.add(new Serie("Serie 1", "Serie URL"));
-        series.add(new Serie("Serie 2", "Serie URL"));
-        series.add(new Serie("Serie 3", "Serie URL"));
 
-        stories.add(new Story("Story URL", "Story 1", "Standard"));
-        stories.add(new Story("Story URL", "Story 2", "Standard"));
-        stories.add(new Story("Story URL", "Story 3", "Standard"));
+        series.add(new Serie("Serie 1", "Serie URL", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        series.add(new Serie("Serie 2", "Serie URL", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        series.add(new Serie("Serie 3", "Serie URL", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        series.add(new Serie("Serie 4", "Serie URL", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        series.add(new Serie("Serie 5", "Serie URL", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        series.add(new Serie("Serie 6", "Serie URL", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+
+
+        stories.add(new Story("Story URL", "Story 1", "Standard", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        stories.add(new Story("Story URL", "Story 2", "Standard", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        stories.add(new Story("Story URL", "Story 3", "Standard", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        stories.add(new Story("Story URL", "Story 4", "Standard", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        stories.add(new Story("Story URL", "Story 5", "Standard", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
+        stories.add(new Story("Story URL", "Story 6", "Standard", new Image("https://vignette.wikia.nocookie.net/marveldatabase/images/d/d8/Origins_of_Marvel_Comics_Vol_1_1.jpg/revision/latest?cb=20110202224931", ".jpg")));
 
         for (Character c: charactersDB
              ) {
