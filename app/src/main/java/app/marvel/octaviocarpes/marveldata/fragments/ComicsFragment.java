@@ -13,7 +13,7 @@ import android.widget.GridView;
 import java.util.List;
 
 import app.marvel.octaviocarpes.marveldata.R;
-import app.marvel.octaviocarpes.marveldata.adapter.ComicsGridViewAdaprter;
+import app.marvel.octaviocarpes.marveldata.adapter.GridViewAdapter;
 import app.marvel.octaviocarpes.marveldata.model.Comic;
 
 public class ComicsFragment extends Fragment {
@@ -49,7 +49,7 @@ public class ComicsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.comics_fragment, container, false);
         gridView = (GridView) view.findViewById(R.id.character_detail_comics_gridViewID);
-        ComicsGridViewAdaprter adapter = new ComicsGridViewAdaprter(context, comics);
+        GridViewAdapter adapter = new GridViewAdapter(context, comics);
         gridView.setAdapter(adapter);
         return view;
     }

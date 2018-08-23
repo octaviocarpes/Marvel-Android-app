@@ -2,13 +2,16 @@ package app.marvel.octaviocarpes.marveldata.model;
 
 public class Story {
 
-    private String resourceURI;
+    private Integer id;
     private String name;
+    private String resourceURI;
+    private Image thumbnail;
     private String type;
 
-    public Story(String resourceURI, String name, String type) {
-        this.resourceURI = resourceURI;
+    public Story(String name, String resourceURI, String type, Image thumbnail) {
         this.name = name;
+        this.resourceURI = resourceURI;
+        this.thumbnail = thumbnail;
         this.type = type;
     }
 
@@ -34,6 +37,22 @@ public class Story {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Image getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(Image thumbnail) {
+        this.thumbnail = thumbnail;
     }
 
     @Override
