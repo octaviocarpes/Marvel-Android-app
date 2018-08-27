@@ -20,4 +20,11 @@ public class CharacterViewModel extends ViewModel {
         return new CharacterRepository();
     }
 
+    public List<Character> getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(List<Character> characters) {
+        this.characters = characters;
+    }
 }

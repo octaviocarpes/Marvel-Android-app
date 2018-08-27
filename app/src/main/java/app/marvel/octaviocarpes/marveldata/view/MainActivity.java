@@ -14,7 +14,8 @@ import app.marvel.octaviocarpes.marveldata.R;
 import app.marvel.octaviocarpes.marveldata.adapter.CharacterListViewAdapter;
 import app.marvel.octaviocarpes.marveldata.model.Character;
 import app.marvel.octaviocarpes.marveldata.requests.CharacterRequest;
-import app.marvel.octaviocarpes.marveldata.responses.CharactersResponse;
+import app.marvel.octaviocarpes.marveldata.responses.character.CharacterResponse;
+import app.marvel.octaviocarpes.marveldata.responses.character.MarvelCharacterResponse;
 import app.marvel.octaviocarpes.marveldata.viewModel.CharacterViewModel;
 import io.fabric.sdk.android.Fabric;
 import retrofit2.Callback;
@@ -35,35 +36,6 @@ public class MainActivity extends AppCompatActivity {
         characterListView = (ListView) findViewById(R.id.characters_list_viewID);
 
         final CharacterViewModel mViewModel = ViewModelProviders.of(this).get(CharacterViewModel.class);
-
-        Call<Character> characters = CharacterRequest.getInstance().getCharactersRequest();
-
-        characters.enqueue(new Callback<Character>() {
-            @Override
-            public void onResponse(Call<Character> call, Response<Character> response) {
-                if (response.isSuccessful()) {
-                    System.out.println(response.body().toString());
-                    System.out.println(response.body().getName());
-                    System.out.println(response.body().toString());
-                } else {
-                    System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%");
-                    System.out.println("AAAAND YOU FAILED");
-                    System.out.println(response);
-                    System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%");
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Character> call, Throwable t) {
-                System.out.println("**********************************");
-                System.out.println("Error!");
-                System.out.println(call.request().toString());
-                System.out.println(call.request().body());
-                System.out.println(t.getMessage());
-                System.out.println("**********************************");
-            }
-        });
-
         loadCharacters(mViewModel);
     }
 
@@ -71,5 +43,6 @@ public class MainActivity extends AppCompatActivity {
         List<Character> characters = mViewModel.getRepository().getcharactersDB();
         characterListViewAdapter = new CharacterListViewAdapter(characters, this);
         characterListView.setAdapter(characterListViewAdapter);
+        characterListViewAdapter.notifyDataSetChanged();
     }
 }

@@ -1,9 +1,6 @@
 package app.marvel.octaviocarpes.marveldata.requests;
 
-import java.util.List;
-
-import app.marvel.octaviocarpes.marveldata.model.Character;
-import app.marvel.octaviocarpes.marveldata.responses.CharactersResponse;
+import app.marvel.octaviocarpes.marveldata.responses.character.MarvelCharacterResponse;
 import app.marvel.octaviocarpes.marveldata.services.CharactersService;
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -33,7 +30,7 @@ public class CharacterRequest {
         this.service = retrofit.create(CharactersService.class);
     }
 
-    public Call<Character> getCharactersRequest() {
+    public Call<MarvelCharacterResponse> getCharactersRequest() {
         return service.charactersList();
     }
 }
