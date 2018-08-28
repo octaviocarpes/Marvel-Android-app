@@ -29,6 +29,7 @@ public class CharacterRepository {
                     for (CharacterResponse characterResponse: response.body().getData().getResults()
                          ) {
                         characterList.add(new Character(characterResponse.getName(),characterResponse.getImage()));
+                        System.out.println(characterList);
                     }
                 } else {
 
@@ -37,7 +38,7 @@ public class CharacterRepository {
 
             @Override
             public void onFailure(Call<MarvelCharacterResponse> call, Throwable t) {
-
+                System.out.println("Erro getting heroes");
             }
         });
 

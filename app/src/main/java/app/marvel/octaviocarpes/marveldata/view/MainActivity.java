@@ -1,13 +1,16 @@
 package app.marvel.octaviocarpes.marveldata.view;
 
+import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
 
 import com.crashlytics.android.Crashlytics;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import app.marvel.octaviocarpes.marveldata.R;
@@ -36,13 +39,18 @@ public class MainActivity extends AppCompatActivity {
         characterListView = (ListView) findViewById(R.id.characters_list_viewID);
 
         final CharacterViewModel mViewModel = ViewModelProviders.of(this).get(CharacterViewModel.class);
-        loadCharacters(mViewModel);
-    }
 
-    private void loadCharacters(CharacterViewModel mViewModel) {
-        List<Character> characters = mViewModel.getRepository().getcharactersDB();
-        characterListViewAdapter = new CharacterListViewAdapter(characters, this);
-        characterListView.setAdapter(characterListViewAdapter);
-        characterListViewAdapter.notifyDataSetChanged();
+        final Observer<List<Character>> observer = new Observer<List<Character>>() {
+            @Override
+            public void onChanged(@Nullable final List<Character> newCharacters) {
+                List<Character> characters = mViewModel.getCharacters();
+                characterListViewAdapter = new CharacterListViewAdapter(characters, MainActivity.this);
+                characterListView.setAdapter(characterListViewAdapter);
+                characterListViewAdapter.notifyDataSetChanged();
+            }
+        };
+
+        // Observe the LiveData, passing in this activity as the LifecycleOwner and the observer.
+        mViewModel.getCharactersLiveData().observe(this, observer);
     }
 }
